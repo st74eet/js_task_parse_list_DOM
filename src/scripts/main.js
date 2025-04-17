@@ -34,4 +34,7 @@ function getEmployees(list) {
   return employees;
 }
 
-getEmployees(employeesList);
+/* eslint-disable */
+const newList = getEmployees(employeesCount);
+
+getEmployees(employeesCount);
