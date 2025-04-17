@@ -17,10 +17,12 @@ function toNumber(string) {
   return Number(string.split('$').join('').split(',').join(''));
 }
 
+sortList(employeesList);
+
 function getEmployees(list) {
   const employeesArray = list.querySelectorAll('li');
 
-  return [...employeesArray].map((employee) => {
+  const employees = [...employeesArray].map((employee) => {
     return {
       name: employee.textContent.trim(),
       position: employee.dataset.position,
@@ -28,7 +30,8 @@ function getEmployees(list) {
       age: employee.dataset.age,
     };
   });
+
+  return employees;
 }
 
-sortList(employeesList);
 getEmployees(employeesList);
